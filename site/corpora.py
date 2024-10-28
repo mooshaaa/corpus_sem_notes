@@ -13,7 +13,7 @@ def index():
 @app.route('/process', methods=['POST'])
 def s():
     q = request.form['req']
-    db_file='database creation/sem_notes_corp.db' # проверь, что там с ссылкой на папку в pev
+    db_file='sem_notes_corp.db' # проверь, что там с ссылкой на папку в pev
     # разберись с множественным выбором
     doc_name=request.form.getlist('exampleRadios')
     if len(doc_name) == 0:
