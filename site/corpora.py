@@ -12,7 +12,7 @@ def index():
 
 @app.route('/process', methods=['POST'])
 def s():
-    q = request.form['req']
+    q = str(request.form['req'])
     db_file='sem_notes_corp.db' # проверь, что там с ссылкой на папку в pev
     # разберись с множественным выбором
     doc_name=request.form.getlist('exampleRadios')
