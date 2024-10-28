@@ -15,7 +15,7 @@ import sqlite3
 
 """# И задаем запрос"""
 
-db_file = 'sem_notes_corp.db'
+db_file = 'database creation/sem_notes_corp.db'
 
 conn = sqlite3.connect(db_file)
 cursor = conn.cursor()
@@ -415,4 +415,4 @@ def search(query, db_file, doc_name=None, gender=None):
 
 # Commented out IPython magic to ensure Python compatibility.
 # %time
-search('A рамка', 'sem_notes_corp.db', doc_name=['Компоненты значения.', 'Отрицательная и положительная поляризация.'])
+search('A рамка', 'database creation/sem_notes_corp.db', doc_name=['Компоненты значения.', 'Отрицательная и положительная поляризация.'])
