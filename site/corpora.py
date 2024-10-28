@@ -27,7 +27,7 @@ def s():
 
     result = search(q, db_file, doc_name, gender)
     res = zip(list(result.keys()), ['|'.join(list(i.values())[:-1])+"|2023" for i in list(result.values())])
-    return render_template('Corpora2.html', a=res)
+    return render_template('Corpora2.html', a=res, question=q)
 
 
 if __name__ == '__main__':
