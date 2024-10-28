@@ -38,6 +38,7 @@ doc_names
 import sqlite3
 
 def get_sentences_with_lemma_only(db_file, lemma, doc_name=None, gender=None):
+    lemma = lemma.lower()
     """Выбирает предложения из таблицы SENT,
     которые содержат слова с заданной леммой.
     """
@@ -91,7 +92,7 @@ def get_sentences_with_wordform_only(db_file, wordform, doc_name=None, gender=No
     """Выбирает предложения из таблицы SENT,
     которые содержат слова с заданной словоформой.
     """
-
+    wordform = wordform.lower()
     conn = sqlite3.connect(db_file)
     cursor = conn.cursor()
     # Запрос с несколькими JOIN
@@ -143,7 +144,7 @@ def get_sentences_with_lemma_tag(db_file, lemma, tag, doc_name=None, gender=None
     """Выбирает предложения из таблицы SENT,
     которые содержат слова с заданной леммой и тегом.
     """
-
+    lemma = lemma.lower()
     conn = sqlite3.connect(db_file)
     cursor = conn.cursor()
 
@@ -194,6 +195,7 @@ def get_sentences_with_wordform_tag(db_file, wordform, tag, doc_name=None, gende
     """Выбирает предложения из таблицы SENT,
     которые содержат слова с заданной словоформой и тегом.
     """
+    wordform = wordform.lower()
     conn = sqlite3.connect(db_file)
     cursor = conn.cursor()
 
@@ -291,7 +293,7 @@ def get_sentences_with_tag(db_file, tag, doc_name=None, gender=None):
 
     return result
 
-!pip install pymorphy2
+# !pip install pymorphy2
 
 import pymorphy2
 
