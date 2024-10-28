@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <div class="p-3 mb-2 text-#D2691E" style="background-color:Green;">
+    <title>Описание проекта</title>
+        <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item active"><a class="page-link"> Запрос </a></li>
+    <li class="page-item"><a class="page-link" href='/process'>Выдача</a></li>
+    <li class="page-item"><a class="page-link" href='/process'>Next</a></li> <!-- подумай, как это блокануть во избежание keyerror-->
+  </ul>
+</nav>
+</head>
+<body>
+
+<div class="text-center">
+<div class="p-4 mb-2 text-#123456" style="background-color:Green;">
+        <p class="h1">Корпус семантических конспектов 2023 года</p>
+        <span class="border border-success">
+        <p class="text-center"> Данный корпус создан на основе записей студентов-лингвистов к экзамену по семантике 2023 года. <br> На его материале можно заметить особенности краткой, <b> конспективной </b> речи с большим количеством сокращений и характерных для современной науке <b>калек </b> и <b>code-switching</b></p>
+        </span>
+        <div class="container">
+    <form action="/process" method="POST">
+    <label> <h5>Можете выбрать подкорпус(ы) -- тем(ы) конспектов </h5></label>
+    <br>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P1" value="История семантики: основные этапы и имена">
+  <label class="form-check-label" for="P1">
+    История семантики: основные этапы и имена-------------1
+  </label>
+  </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P2" value="Треугольник Фреге">
+  <label class="form-check-label" for="P2">
+    Треугольник Фреге-------------------------------------------2
+  </label>
+  </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P3" value="Теория референции">
+  <label class="form-check-label" for="P3">
+    Теория референции------------------------------------------3
+  </label>
+  </div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P4" value="Понятие интенсионала и экстенсионала">
+  <label class="form-check-label" for="P4">
+    Понятие интенсионала и экстенсионала-------------------4
+  </label>
+</div>
+    <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P5" value="Компонентный анализ">
+  <label class="form-check-label" for="P5">
+    Компонентный анализ---------------------------------------5
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P6" value="Фон и фигура">
+  <label class="form-check-label" for="P6">
+    Фон и фигура-------------------------------------------------6
+  </label>
+    </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P7" value="Траектор и ориентир">
+  <label class="form-check-label" for="P6">
+    Траектор и ориентир----------------------------------------7
+  </label>
+    </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P8" value="Семантические роли">
+  <label class="form-check-label" for="P6">
+    Семантические роли----------------------------------------8
+  </label>
+    </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P9" value="Фреймовая семантика">
+  <label class="form-check-label" for="P6">
+    Фреймовая семантика--------------------------------------9
+  </label>
+    </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P10" value="Синкретическое выражение семантических ролей">
+  <label class="form-check-label" for="P6">
+    Синкретическое выражение семантических ролей----10
+  </label>
+    </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P11" value="Актанты и сирконстанты">
+  <label class="form-check-label" for="P1">
+    Актанты и сирконстанты----------------------------------11
+  </label>
+  </div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P12" value="Семантические и синтаксические актанты">
+  <label class="form-check-label" for="P2">
+    Семантические и синтаксические актанты--------------12
+  </label>
+</div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P13" value="Наследование актантов">
+  <label class="form-check-label" for="P3">
+    Наследование актантов-----------------------------------13
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P14" value="Компоненты значения">
+  <label class="form-check-label" for="P4">
+    Компоненты значения------------------------------------14
+  </label>
+</div>
+    <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P15" value="Понятие сферы действия">
+  <label class="form-check-label" for="P5">
+    Понятие сферы действия---------------------------------15
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P16" value="Фигура наблюдателя">
+  <label class="form-check-label" for="P6">
+    Фигура наблюдателя--------------------------------------16
+  </label>
+    </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P17" value="Понятие коннотации">
+  <label class="form-check-label" for="P6">
+    Понятие коннотации--------------------------------------17
+  </label>
+    </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P18" value="Отрицательная и положительная поляризация">
+  <label class="form-check-label" for="P6">
+    Отрицательная и положительная поляризация--------18
+  </label>
+    </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P19" value="Полисемия">
+  <label class="form-check-label" for="P6">
+    Полисемия-------------------------------------------------19
+  </label>
+    </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P20" value="Понятие семантического инварианта">
+  <label class="form-check-label" for="P6">
+    Понятие семантического инварианта-------------------20
+  </label>
+    </div>
+    <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P21" value="Основные типы семантических сдвигов">
+  <label class="form-check-label" for="P5">
+    Основные типы семантических сдвигов----------------21
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P22" value="Р.Якобсон о метафоре и метонимии">
+  <label class="form-check-label" for="P6">
+    Р.Якобсон о метафоре и метонимии--------------------22
+  </label>
+    </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P23" value="А.Вежбицка о метафоре и сравнении">
+  <label class="form-check-label" for="P6">
+    А.Вежбицка о метафоре и сравнении-------------------23
+  </label>
+    </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P24" value="Дж.Лакофф о концептуальной метафоре">
+  <label class="form-check-label" for="P6">
+    Дж.Лакофф о концептуальной метафоре---------------24
+  </label>
+    </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P25" value="Концептуальный блендинг">
+  <label class="form-check-label" for="P6">
+    Концептуальный блендинг-------------------------------25
+  </label>
+    </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P26" value="Е.В.Падучева о механизмах метафоры и метонимии">
+  <label class="form-check-label" for="P6">
+    Е.В.Падучева о механизмах метафоры и метонимии--26
+  </label>
+    </div>
+    <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P27" value="Регулярная метонимия (типы с примерами)">
+  <label class="form-check-label" for="P5">
+    Регулярная метонимия (типы с примерами)-----------27
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P28" value="Универсальная метафора">
+  <label class="form-check-label" for="P6">
+    Универсальная метафора--------------------------------28
+  </label>
+    </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P29" value="Лексические функции">
+  <label class="form-check-label" for="P6">
+    Лексические функции------------------------------------29
+  </label>
+    </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P30" value="Импликатура как механизм семантических сдвигов">
+  <label class="form-check-label" for="P6">
+    Импликатура как механизм семантических сдвигов--30
+  </label>
+    </div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" name="exampleRadios" id="P31" value="Грамматика конструкций">
+  <label class="form-check-label" for="P6">
+    Грамматика конструкций--------------------------------31
+  </label>
+    </div>
+</div>
+<br>
+<div class="form-check">
+    <label for="radio1"> <h5>Можете выбрать пол автора </h5></label>
+    <br>
+  <input class="form-check-input" type="radio" name="tvo" id="radio1" value="f">
+  <label class="form-check-label" for="radio1">
+    Женский
+  </label>
+    <br>
+  <input class="form-check-input" type="radio" name="tvo" id="radio2" value="m">
+  <label class="form-check-label" for="radio2">
+    Мужской
+  </label>
+</div>
+  <br>
+<table class="table table-success">
+  <label> <h5> Таблица тэгов частей речи</h5></label>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Часть речи</th>
+      <th scope="col">Обозначение</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Прилагательное</td>
+      <td>A</td>
+      </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Наречие</td>
+      <td>ADV</td>
+      </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Местоимение-наречие</td>
+      <td>ADVPRO</td>
+      </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Прилагательное-числительное</td>
+      <td>ANUM</td>
+      </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Местоимение-прилагательное</td>
+      <td>APRO</td>
+      </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Сравнительная форма</td>
+      <td>COM</td>
+      </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Союз</td>
+      <td>CONJ</td>
+      </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Междометие</td>
+      <td>INTJ</td>
+      </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Числительное</td>
+      <td>NUM</td>
+      </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Частица</td>
+      <td>PART</td>
+      </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Предлог</td>
+      <td>PR</td>
+      </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Существительное</td>
+      <td>S</td>
+      </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Местоимение-существительное</td>
+      <td>SPRO</td>
+      </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Глагол</td>
+      <td>V</td>
+    </tr>
+  </tbody>
+</table>
+
+  <br>
+  <label for="request"> <h4> Введите ваш запрос: </h4></label>
+        <input type="text" id="request" rows="3" placeholder="поиск" name="req"></textarea>
+            <br>
+            <button type="submit" class="btn btn-success"> <h4>Искать</h4></button>
+        </form>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>------------------------------------------------------------------------------------</p>
+        <h5><a href="https://docs.google.com/document/d/14hg1k6PjrQPJ8HXoZOP2xYRcd2h19lddCAtcBSkolis/edit?tab=t.0#bookmark=id.b580cv7a8zl4" class="link-success"> Конспект к экзамену по семантике 2023 год</a></h5>
+</div>
+    </div>
+</div>
+</body>
+</html>
