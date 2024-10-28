@@ -1,4 +1,4 @@
-from db_search_multiple_docs import *
+from search/db_search_multiple_docs import *
 
 from flask import Flask
 from flask import render_template
