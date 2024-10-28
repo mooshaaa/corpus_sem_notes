@@ -38,12 +38,12 @@ doc_names
 import sqlite3
 
 def get_sentences_with_lemma_only(db_file, lemma, doc_name=None, gender=None):
-    lemma = lemma.lower()
     """Выбирает предложения из таблицы SENT,
     которые содержат слова с заданной леммой.
     """
     conn = sqlite3.connect(db_file)
     cursor = conn.cursor()
+    lemma = lemma.lower()
     # Запрос с несколькими JOIN
     if (doc_name != None) and (gender != None):
         query = """
@@ -144,10 +144,10 @@ def get_sentences_with_lemma_tag(db_file, lemma, tag, doc_name=None, gender=None
     """Выбирает предложения из таблицы SENT,
     которые содержат слова с заданной леммой и тегом.
     """
-    lemma = lemma.lower()
+
     conn = sqlite3.connect(db_file)
     cursor = conn.cursor()
-
+    lemma = lemma.lower()
     if (doc_name != None) and (gender != None):
         query = """
             SELECT DISTINCT WORD.sent_id, WORD.word_position, DOCS.doc_id
@@ -195,10 +195,9 @@ def get_sentences_with_wordform_tag(db_file, wordform, tag, doc_name=None, gende
     """Выбирает предложения из таблицы SENT,
     которые содержат слова с заданной словоформой и тегом.
     """
-    wordform = wordform.lower()
     conn = sqlite3.connect(db_file)
     cursor = conn.cursor()
-
+    wordform = wordform.lower()
     if (doc_name != None) and (gender != None):
         query = """
             SELECT DISTINCT WORD.sent_id, WORD.word_position, DOCS.doc_id
@@ -293,7 +292,7 @@ def get_sentences_with_tag(db_file, tag, doc_name=None, gender=None):
 
     return result
 
-# !pip install pymorphy2
+!pip install pymorphy2
 
 import pymorphy2
 
@@ -324,6 +323,7 @@ def search(query, db_file, doc_name=None, gender=None):
             if word[0] and word[-1] == '"':
                 # находим все предложения со словоформой
                 # (предложение, номер в предложении)
+                word = word[1:-1]
                 sentences = get_sentences_with_wordform_tag(db_file, word, tag, doc_name, gender)
                 # если счетчик не задан (первый элемент запроса)
                 if wp == None:
@@ -359,6 +359,7 @@ def search(query, db_file, doc_name=None, gender=None):
             # то же самое, что раньше
             word = part[0]
             if word[0] and word[-1] == '"':
+                word = word[1:-1]
                 sentences = get_sentences_with_wordform_only(db_file, word, doc_name, gender)
                 if wp == None:
                     wp = {s[0]: [s[1]] for s in sentences}
@@ -415,4 +416,4 @@ def search(query, db_file, doc_name=None, gender=None):
 
 # Commented out IPython magic to ensure Python compatibility.
 # %time
-search('A рамка', 'sem_notes_corp.db', doc_name=['Компоненты значения.', 'Отрицательная и положительная поляризация.'])
+search('"любовь"', 'sem_notes_corp.db')
