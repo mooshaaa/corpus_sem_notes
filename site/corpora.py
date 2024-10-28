@@ -13,11 +13,7 @@ def index():
 @app.route('/process', methods=['POST'])
 def s():
     q = str(request.form['req'])
-    # if '"' in q:
-    #     q = q.replace('"', "'")
-    # q.replace("'")
-    db_file='sem_notes_corp.db' # проверь, что там с ссылкой на папку в pev
-    # разберись с множественным выбором
+    db_file='sem_notes_corp.db'
     doc_name=request.form.getlist('exampleRadios')
     if len(doc_name) == 0:
         doc_name = None
@@ -28,7 +24,7 @@ def s():
     except KeyError:
         gender = None
 
-    result = search(f"'{q}'", db_file, doc_name, gender)
+    result = search(q, db_file, doc_name, gender)
     res = zip(list(result.keys()), ['|'.join(list(i.values())[:-1])+"|2023" for i in list(result.values())])
     return render_template('Corpora2.html', a=res, question=q)
 
