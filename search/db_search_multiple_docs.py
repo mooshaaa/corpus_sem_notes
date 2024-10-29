@@ -300,7 +300,7 @@ morph = pymorphy2.MorphAnalyzer()
 
 all_tags = ['A', 'ADV', 'ADVPRO', 'ANUM', 'APRO',
             'COM', 'CONJ', 'INTJ', 'NUM', 'PART',
-            'PR', 'S', 'SPRO', 'V']
+            'PR', 'S', 'SPRO', 'V', 'LAT']
 
 def search(query, db_file, doc_name=None, gender=None):
     """Выбирает предложения из таблицы SENT,
